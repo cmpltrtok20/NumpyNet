@@ -72,7 +72,7 @@ if '__main__' == __name__:
         NAME,
         model, N_BATCH_SIZE,
         save_freq=SAVE_FREQ, ver=VER, epoch_ckpt_map=get_save_path,
-        tvts_host='192.168.31.20',
+        tvts_host='127.0.0.1',
         save_dir=SAVE_DIR,
     )
     trainObj.resume(PARENT_ID, PARENT_EPOCH)
