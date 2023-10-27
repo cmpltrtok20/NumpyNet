@@ -1,2 +1,4 @@
 *.tmp.*
 .svn
+_save
+__pycache__
