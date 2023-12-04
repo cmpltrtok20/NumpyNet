@@ -30,7 +30,7 @@ if '__main__' == __name__:
     sep('Start')
     NAME = 'mnist_multi_clf_by_NumpyNet_MLP_b512'
     """
-    python tvts.py -m 'cost|cost_val,acc|acc_val' --batch_metrics 'cost,acc' -k 'acc_val' --hyper lr mnist_multi_clf_by_NumpyNet_MLP_256x2
+    python tvts.py -m "cost|cost_val,acc|acc_val" --batch_metrics "cost,acc" -k "acc_val" --hyper lr mnist_multi_clf_by_NumpyNet_MLP_b512
     """
     IS_TRAIN = 1
     PARENT_ID = 0

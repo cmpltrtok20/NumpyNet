@@ -104,7 +104,7 @@ class NumpyNet(object):
                 f1=f1
             )
         else:
-            acc = (Y.argmax(axis=-1) == A.argmax(axis=-1)).astype(np.int).sum() / m
+            acc = (Y.argmax(axis=-1) == A.argmax(axis=-1)).astype(np.int64).sum() / m
             return dict(
                 acc=acc
             )
