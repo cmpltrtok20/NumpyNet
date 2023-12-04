@@ -2,6 +2,8 @@ import numpy as np
 from NumpyNet.activations import acts, eps
 from NumpyNet.layers.conn import ConnLayer
 
+eps = 1e-20
+
 
 def softmax_foward(inputs):
     exp = np.exp(inputs)
@@ -75,7 +77,7 @@ class NumpyNet(object):
     def cost(self, A, Y):
         m = len(Y)
         if self.bin:
-            j = np.dot(Y.T, np.log(A)) + np.dot((1.0 - Y.T), np.log(1.0 - A))
+            j = np.dot(Y.T, np.log(A + eps)) + np.dot((1.0 - Y.T), np.log(1.0 - A + eps))
             j = j[0][0] / -m
         else:
             j = (Y * np.log(A)).sum(axis=-1).sum()
@@ -86,7 +88,7 @@ class NumpyNet(object):
         m = len(Y)
         if self.bin:
             Y = Y.astype(np.float32)
-            ones = np.ones_like(Y, dtype=np.int)
+            ones = np.ones_like(Y, dtype=np.int64)
             TP = ones[(A > thresh) & (Y > thresh)].sum()
             TN = ones[(A < thresh) & (Y < thresh)].sum()
             FP = ones[(A > thresh) & (Y < thresh)].sum()

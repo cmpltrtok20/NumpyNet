@@ -34,10 +34,10 @@ if '__main__' == __name__:
     sep('Start')
     NAME = 'mnist_bin_clf_by_NumpyNet_MLP_256x2'
     """
-    python tvts.py -m 'cost|cost_val,acc|acc_val|recall|recall_val|precision|precision_val|f1|f1_val' --batch_metrics 'cost,acc|recall|precision|f1' -k 'acc_val' --hyper duration_in_sec mnist_bin_clf_by_NumpyNet_MLP_256x2
+    python tvts.py -m "cost|cost_val,acc|acc_val|recall|recall_val|precision|precision_val|f1|f1_val" --batch_metrics "cost,acc|recall|precision|f1" -k "acc_val" --hyper duration_in_sec mnist_bin_clf_by_NumpyNet_MLP_256x2
     """
-    IS_TRAIN = 0
-    PARENT_ID = 10
+    IS_TRAIN = 1
+    PARENT_ID = 0
     PARENT_EPOCH = 0
     RSEED = 1
     if RSEED is not None:
